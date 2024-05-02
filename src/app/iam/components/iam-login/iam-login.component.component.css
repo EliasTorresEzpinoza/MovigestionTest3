@@ -1,0 +1,131 @@
+/* General */
+p {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+}
+.text-left{
+  text-align: left;
+  color: white;
+  font-size: 2vh;
+  margin: 10px 0 0 0;
+}
+
+a {
+  color: #92badd;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 40px 8px 10px 8px;
+  color: #cccccc;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Formulario */
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#formContent {
+  border-radius: 10px;
+  background: #303841;
+  padding: 30px;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  border: 1px solid white;
+  text-align: center;
+}
+
+/* Campos de entrada */
+input[type=text], input[type=password] {
+  background-color: #f6f6f6;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px auto;
+  width: 80%; /* Ajustado para tener un pequeño espacio alrededor */
+  border-radius: 5px;
+  transition: background-color 0.5s, border-bottom 0.5s;
+  font-family: 'Open Sans', sans-serif;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #92badd;
+  border-bottom: 2px solid #F39C12;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Botones */
+input[type=submit]  {
+  background-color: #F39C12;
+  border: none;
+  color: white;
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  border-radius: 5px;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Open Sans', sans-serif;
+}
+
+input[type=submit]:hover {
+  background-color: #92badd;
+}
+
+/* Alertas */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Animaciones */
+.fadeInDown {
+  animation: fadeInDown 1s both;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Otros */
+*:focus {
+  outline: none;
+}
+
+#icon {
+  width: 60%;
+}

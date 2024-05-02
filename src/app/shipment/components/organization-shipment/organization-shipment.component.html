@@ -1,0 +1,76 @@
+<div class="flex align-content-start flex wrap">
+  <div class="ml-3">
+    <h1>Organization</h1>
+    <h3>Click in the list to see details</h3>
+  </div>
+  <div class="flex justify-content-end">
+    <button class="mr-2" (click)="newItem()">Add</button>
+  </div>
+</div>
+<div>
+  <app-pv-card>
+    <div *pvCardContent>
+      <app-pv-table [value]="shipments" (rowClick)="showShipmentDetails($event.data)">
+        <app-pv-column field="driverName" header="Driver's Name"></app-pv-column>
+        <app-pv-column field="destiny" header="Destiny"></app-pv-column>
+        <app-pv-column field="description" header="Description"></app-pv-column>
+        <app-pv-column field="dateTime.date" header="Delivery date"></app-pv-column>
+        <app-pv-column field="dateTime.time" header="Delivery time"></app-pv-column>
+        <app-pv-column field="status" header="Status"></app-pv-column>
+      </app-pv-table>
+    </div>
+  </app-pv-card>
+</div>
+<app-pv-dialog [(visible)]="shipmentDetailsDialog" [style]="{width: '450px'}" header="Shipment Details" [modal]="true" class="p-fluid dialog-style">
+  <div *pvDialogContent>
+    <p>Driver's Name: {{ selectedShipment.driverName }}</p>
+    <p>Destiny: {{ selectedShipment.destiny }}</p>
+    <p>Description: {{ selectedShipment.description }}</p>
+    <p>Delivery date: {{ selectedShipment.dateTime.date }}</p>
+    <p>Delivery time: {{ selectedShipment.dateTime.time }}</p>
+    <p>Status: {{ selectedShipment.status }}</p>
+  </div>
+
+  <div *pvDialogFooter>
+    <button label="Close" icon="pi pi-times" text (click)="hideShipmentDetailsDialog()" class="cancel-button"></button>
+  </div>
+</app-pv-dialog>
+
+<app-pv-dialog [(visible)]="shipmentDialog" [style]="{width: '450px'}" header="Add shipping" [modal]="true" class="p-fluid dialog-style">
+  <div *pvDialogContent>
+    <div class="field">
+      <p>Driver's Name</p>
+      <input id="name" [(ngModel)]="shipment.driverName" required autofocus [ngClass]="{'p-inputtext': true, 'p-invalid': submitted && !shipment.driverName}" />
+      <small *ngIf="submitted && !shipment.driverName" class="p-error">Name is required.</small>
+    </div>
+    <div class="field">
+      <p>Destiny</p>
+      <input id="destiny" [(ngModel)]="shipment.destiny" required autofocus [ngClass]="{'p-inputtext': true, 'p-invalid': submitted && !shipment.destiny}" />
+      <small *ngIf="submitted && !shipment.destiny" class="p-error">Destiny is required.</small>
+    </div>
+    <div class="field">
+      <p>Description</p>
+      <input id="description" [(ngModel)]="shipment.description" required class="p-inputtext" />
+      <small *ngIf="submitted && !shipment.description" class="p-error">Description is required.</small>
+    </div>
+    <div class="field">
+      <p>Delivery date</p>
+      <app-pv-calendar [(ngModel)]="shipment.dateTime.date" dateFormat="yy/mm/dd" class="calendar"></app-pv-calendar>
+      <small *ngIf="submitted && !shipment.dateTime.date" class="p-error">Date is required.</small>
+    </div>
+    <div class="field">
+      <p>Delivery time</p>
+      <app-pv-calendar id="calendar-timeonly" [(ngModel)]="shipment.dateTime.time" timeOnly hourFormat="hh:mm" class="calendar"></app-pv-calendar>
+      <small *ngIf="submitted && !shipment.dateTime.time" class="p-error">Time is required.</small>
+    </div>
+    <div class="field">
+      <p>Status</p>
+      <input id="status" [(ngModel)]="shipment.status" disabled placeholder="Programmed" value="Programmed" class="p-inputtext" />
+    </div>
+  </div>
+
+  <div *pvDialogFooter>
+    <button label="Cancel" icon="pi pi-times" text (click)="hideDialog()" class="cancel-button"></button>
+    <button label="Save" icon="pi pi-check" text (click)="saveShipment()" class="save-button"></button>
+  </div>
+</app-pv-dialog>

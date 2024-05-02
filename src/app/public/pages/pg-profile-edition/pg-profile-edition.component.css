@@ -1,0 +1,20 @@
+.p-sidebar{
+  background-color: #303841;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+body{
+  background-color: #5D6D7E;
+}
+
+.mr-6 {
+  margin-right: 2px;
+  margin-left: -200px;
+}
+mat-sidenav-content
+{
+  background-color: #5D6D7E;
+
+
+}

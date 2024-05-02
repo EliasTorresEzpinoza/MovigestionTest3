@@ -1,0 +1,37 @@
+<div class="container">
+  <div>
+    <h1 class="title">Vehicles</h1>
+    <div class="button-group">
+      <button mat-raised-button class="p-button" (click)="showAddForm = !showAddForm">Add Vehicle</button>
+      <button mat-raised-button class="p-button" (click)="showDeleteForm = !showDeleteForm">Delete Vehicle</button>
+    </div>
+    <form *ngIf="showAddForm" (submit)="addVehicle()" class="form-card">
+      <h2 class="title-card">New Vehicle</h2>
+      <label >Model</label>
+      <input [(ngModel)]="vehicle.model" name="model" placeholder="Model" required>
+      <label >License Plate</label>
+      <input [(ngModel)]="vehicle.licensePlate" name="licensePlate" placeholder="License Plate" required>
+      <label >Serial Number</label>
+      <input [(ngModel)]="vehicle.serialNumber" name="serialNumber" placeholder="Serial Number" required>
+      <button mat-raised-button type="submit">Confirm</button>
+      <button mat-raised-button (click)="showAddForm = false">Close</button>
+    </form>
+    <form *ngIf="showDeleteForm" class="form-card">
+      <h2 class="title-card">Delete Vehicle</h2>
+      <label >Vehicle ID</label>
+      <input [(ngModel)]="deleteVehicleId" name="vehicleId" placeholder="Vehicle ID" required>
+      <button mat-raised-button (click)="deleteVehicle()">Confirm</button>
+      <button mat-raised-button (click)="showDeleteForm = false">Close</button>
+    </form>
+  </div>
+  <div *ngFor="let vehicle of this.vehicles">
+    <mat-card class="card">
+      <mat-card-title>Vehicle ID: {{vehicle[0].id}}</mat-card-title>
+      <mat-card-content>
+        <p>License Plate: {{vehicle[0].licensePlate}}</p>
+        <p>Serial Number: {{vehicle[0].serialNumber}}</p>
+        <p>Model: {{vehicle[0].model}}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

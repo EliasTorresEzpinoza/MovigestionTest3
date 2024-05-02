@@ -1,0 +1,79 @@
+.container {
+  justify-content: space-between;
+  gap: 20px; /* Agrega espacio entre los elementos */
+}
+
+.card,
+.mat-card {
+  background-color: #F39C12;
+  border: 2px solid #fff; /* Borde blanco */
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Agrega sombreado */
+  overflow: hidden; /* Evita que el contenido sobresalga del card */
+  transition: transform 0.3s ease-in-out; /* Agrega animación de despliegue */
+  width: calc(50% - 10px); /* Ancho del card */
+  margin-top: 40px; /* Aumenta el margen entre los cards */
+}
+
+.card:hover,
+.mat-card:hover {
+  transform: translateY(-5px); /* Desplaza ligeramente hacia arriba al hacer hover */
+}
+
+.mat-card-title,
+.mat-card-content {
+  background-color: #F39C12; /* Color de fondo */
+  color: #fff; /* Color del texto */
+  padding: 10px;
+}
+
+.mat-card-title {
+  border-bottom: 2px solid #fff; /* Borde inferior blanco */
+}
+
+.form-card {
+  background-color: #F39C12; /* Color de fondo del formulario */
+  border: 2px solid #fff; /* Borde blanco */
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Agrega sombreado */
+  padding: 20px;
+  margin-top: 10px; /* Aumenta el margen superior */
+}
+.input-container {
+  margin-bottom: 20px; /* Espacio entre inputs */
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc; /* Borde gris */
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none; /* Elimina el contorno al enfocar */
+  border-color: #F39C12; /* Cambia el color del borde al enfocar */
+  box-shadow: 0 0 5px #F39C12; /* Agrega sombra al enfocar */
+}
+
+input[type="submit"],
+button {
+  background-color: #fff; /* Fondo blanco */
+  color: #F39C12; /* Texto naranja */
+  border: 2px solid #F39C12; /* Borde naranja */
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: #F39C12; /* Fondo naranja al hacer hover */
+  color: #fff; /* Texto blanco al hacer hover */
+}

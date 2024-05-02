@@ -1,0 +1,25 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="fadeIn first">
+      <img src="https://i.ibb.co/RCDQZnJ/logo.png" id="icon" alt="User Icon" />
+    </div>
+    <h1>Register as</h1>
+    <!-- Botones -->
+    <div class="buttons">
+      <button class="btn" (click)="typeSelection('businessman'); goToRegisterUserInformation('businessman')">
+        &nbsp;<i class="pi pi-user"></i>&nbsp; Businessman
+      </button>
+      <button class="btn" (click)="typeSelection('carrier'); goToRegisterUserInformation('carrier')">
+        &nbsp;<i class="pi pi-user"></i>&nbsp; Carrier
+      </button>
+    </div>
+    <!-- Go to Log in-->
+    <div>
+      <p>
+        <i class="pi pi-minus"></i> Already have an account?
+        <a routerLink="/login" (click)="cleanCss()">Log in</a>
+        <i class="pi pi-minus"></i>
+      </p>
+    </div>
+  </div>
+</div>

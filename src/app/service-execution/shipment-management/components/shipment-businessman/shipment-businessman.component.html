@@ -1,0 +1,39 @@
+<div class="container">
+  <div>
+    <h1 class="title">SHIPMENTS</h1>
+    <div class="button-group">
+      <button mat-raised-button class="p-button" (click)="showAddForm = !showAddForm">Add Shipment</button>
+      <button mat-raised-button class="p-button" (click)="showDeleteForm = !showDeleteForm">Delete Shipment By Id</button>
+    </div>
+    <form *ngIf="showAddForm" (submit)="addShipment()" class="form-card">
+      <h2 class="title-card">New Shipment</h2>
+      <label >Shipment Description: </label>
+      <input [(ngModel)]="shipment.description" name="description" placeholder="Shipment Description" required>
+      <label >Shipment Destiny:</label>
+      <input [(ngModel)]="shipment.destiny" name="destiny" placeholder="Shipment Destiny" required>
+      <label >Shipment Id Carrier</label>
+      <input [(ngModel)]="shipment.idUser" name="IdCarrier" placeholder="Id Carrier" required>
+      <button mat-raised-button type="submit">Confirm</button>
+      <button mat-raised-button (click)="showAddForm = false">Close</button>
+    </form>
+    <form *ngIf="showDeleteForm" class="form-card">
+      <h2 class="title-card">Delete Shipment</h2>
+      <label >Shipment ID</label>
+      <input [(ngModel)]="deleteShipmentId" name="ShipmentID" placeholder="Shipment ID" required>
+      <button mat-raised-button (click)="deleteShipment()">Confirm</button>
+      <button mat-raised-button (click)="showDeleteForm = false">Close</button>
+    </form>
+  </div>
+  <div *ngFor="let shipment of this.shipments">
+    <mat-card class="card">
+      <mat-card-title>Shipment ID: {{shipment.id}}</mat-card-title>
+      <mat-card-content>
+        <p>Carrier ID: {{shipment.idUser }}</p>
+        <p>Shipment Description: {{shipment.description}}</p>
+        <p>Shipment destiny: {{shipment.destiny}}</p>
+        <p>Registration Time: {{shipment.dateTime.time}}</p>
+        <p>Registration Date: {{shipment.dateTime.date}}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

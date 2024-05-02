@@ -1,0 +1,57 @@
+
+<!-- home-businessman.component.html -->
+<div class="p-5 flex flex-row flex-auto container z-1">
+  <div>
+    <div class="w-full align-content-center">
+      <div class="welcome-container">
+        <h1 class="title">Welcome, Jhon Doe!</h1>
+        <img src="https://i.ibb.co/RCDQZnJ/logo.png" id="icon" alt="User Icon" class="custom-image">
+      </div>
+      <p class="subtitle">Let's start</p>
+      <div class="card-container">
+        <div class="card" *ngIf="activities.length">
+          <h2 class="card-title"><i class="fa fa-list"></i>Today's activities</h2>
+          <div class="card-content">
+            <div class="activity" *ngFor="let activity of activities.slice(0, 3)">
+              <div class="card-content1">
+                <h3>{{ activity.description }}</h3>
+                <div class="date-time">
+                  <p>{{ activity.type }}</p>
+                  <p>{{ activity.dateTime.date }} - {{ activity.dateTime.time }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="see-more-button">See More</button>
+        </div>
+
+        <div class="card" *ngIf="deliveries.length">
+          <h2 class="card-title"><i class="fa fa-truck"></i>Deliveries on the move</h2>
+          <div class="card-content2">
+            <div class="delivery" *ngFor="let delivery of deliveries.slice(0, 1)">
+              <h3>{{ delivery.destiny }}</h3>
+              <p>Responsible: {{ delivery.description }}</p>
+              <p>Start time: {{ delivery.dateTime.date }}</p>
+              <p>Delivery time: {{ delivery.status }}</p>
+            </div>
+          </div>
+          <button class="see-more-button1">See More</button>
+        </div>
+      </div>
+      <div class="card2" *ngIf="conditions.length">
+        <h2 class="card-title2"><i class="fa fa-signal"></i>Condition of drivers and vehicles</h2>
+        <div class="card-content3">
+          <div class="condition" *ngFor="let condition of conditions.slice(0, 1)">
+            <div class="date-time2">
+              <p>Model: {{ condition.model }}</p>
+              <p>License Plate: {{ condition.licensePlate }}</p>
+              <p>Serial Number: {{ condition.serialNumber }}</p>
+            </div>
+          </div>
+        </div>
+        <button class="see-more-button2">See More</button>
+      </div>
+    </div>
+  </div>
+</div>
+

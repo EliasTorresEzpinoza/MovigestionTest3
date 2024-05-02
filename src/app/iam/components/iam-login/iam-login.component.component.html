@@ -1,0 +1,26 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="fadeIn first">
+      <img src="https://i.ibb.co/RCDQZnJ/logo.png" id="icon" alt="User Icon" />
+    </div>
+    <h1>Login</h1>
+    <form (ngSubmit)="login()">
+      <p class="text-left">Email</p>
+      <input type="text" id="login" class="fadeIn second" name="login" [(ngModel)]="user.email">
+      <p class="text-left">Password</p>
+      <input type="password" id="password" class="fadeIn third" name="password" [(ngModel)]="user.password">
+      <!-- <p class="text-right">Forgot password?</p> -->
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+    <div class="alert alert-danger" *ngIf="error">
+      {{ error_msg }}
+    </div>
+    <div>
+      <p>
+        <i class="pi pi-minus"></i> Don't have an account?
+        <a routerLink="/register" (click)="cleanCss()">Sign up</a>
+        <i class="pi pi-minus"></i>
+      </p>
+    </div>
+  </div>
+</div>

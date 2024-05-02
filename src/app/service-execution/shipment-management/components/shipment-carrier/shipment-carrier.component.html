@@ -1,0 +1,17 @@
+<div class="container">
+  <div>
+    <h1 class="title">YOUR SHIPMENTS :D</h1>
+  </div>
+  <div *ngFor="let shipment of this.shipments">
+    <mat-card class="card">
+      <mat-card-title>Shipment ID: {{shipment.id}}</mat-card-title>
+      <mat-card-content>
+        <p>Carrier ID: {{shipment.idUser }}</p>
+        <p>Shipment Description: {{shipment.description}}</p>
+        <p>Shipment destiny: {{shipment.destiny}}</p>
+        <p>Registration Time: {{shipment.dateTime.time}}</p>
+        <p>Registration Date: {{shipment.dateTime.date}}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

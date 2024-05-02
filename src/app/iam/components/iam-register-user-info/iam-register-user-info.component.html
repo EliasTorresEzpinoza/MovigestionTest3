@@ -1,0 +1,49 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <div class="fadeIn first">
+      <img src="https://i.ibb.co/RCDQZnJ/logo.png" id="icon" alt="User Icon" />
+    </div>
+    <h1>Sign Up</h1>
+    <!-- Login Form -->
+    <form (submit)="createdUser()">
+      <div class="input-group">
+        <div class="input-half">
+          <p class="text-left">Name</p>
+          <input type="text" id="name" class="fadeIn second" name="name" [(ngModel)]="user.name">
+        </div>
+        <div class="input-half">
+          <p class="text-left">Last Name</p>
+          <input type="text" id="lastName" class="fadeIn second" name="lastName" [(ngModel)]="user.lastName">
+        </div>
+      </div>
+      <p class="text-left">Email</p>
+      <input type="text" id="login" class="fadeIn second" name="login" [(ngModel)]="user.email">
+      <div class="input-group">
+        <div class="input-half">
+          <p class="text-left">Password</p>
+          <input type="password" id="password" class="fadeIn third" name="password" [(ngModel)]="user.password">
+        </div>
+        <div class="input-half">
+          <p class="text-left">Confirm password</p>
+          <input type="password" id="passwordConfirmation" class="fadeIn third" name="passwordConfirmation" [(ngModel)]="passwordConfirmation">
+        </div>
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="Checkbox" name="Checkbox" value="privacityPolicy" [(ngModel)]="privacityPolicy">
+        <label for="Checkbox">I have read and agree to the Privacy Policy</label>
+      </div>
+
+      <input type="submit" class="fadeIn fourth" value="Sign Up">
+    </form>
+
+    <!-- Go to Register -->
+    <div class="alert alert-danger"  *ngIf="error">
+      {{error_msg}}
+    </div>
+    <div>
+      <p> <i class="pi pi-minus"></i> Already have a account? <a routerLink="/login" > Log in</a> <i class="pi pi-minus"></i> </p>
+    </div>
+  </div>
+</div>

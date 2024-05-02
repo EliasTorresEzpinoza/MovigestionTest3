@@ -1,0 +1,15 @@
+<div class="container">
+  <div>
+    <h1 class="title">Your Vehicle :D</h1>
+  </div>
+  <div *ngFor="let vehicle of this.vehicles">
+    <mat-card class="card">
+      <mat-card-title>Vehicle ID: {{vehicle[0].id}}</mat-card-title>
+      <mat-card-content>
+        <p>License Plate: {{vehicle[0].licensePlate}}</p>
+        <p>Serial Number: {{vehicle[0].serialNumber}}</p>
+        <p>Model: {{vehicle[0].model}}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
